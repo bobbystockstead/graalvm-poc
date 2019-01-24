@@ -2,7 +2,7 @@
 Test app with Grapes -> Groovy -> GraalVM -> docker !
 
 ### check your dgm config file
-If you are using a version of groovy other than 2.5.2, make sure that you update your dgm.json.  You can do this by running:
+If you are using a version of groovy other than 2.5.5, make sure that you update your dgm.json.  You can do this by running:
 
 > `groovy src/dgm.groovy > src/dgm.json`
 
@@ -23,3 +23,14 @@ Format:
 
 Example:
 > `./countlinks -Djava.library.path=$HOME/.sdkman/candidates/java/1.0.0-rc-11-grl/jre/lib https://stackoverflow.com`
+
+
+## Speed test results
+Dynamic groovy:
+> `9.80s user 0.66s system 346% cpu 3.022 total`
+Compiled static groovy:
+> `2.68s user 0.34s system 294% cpu 1.024 total`
+GraalVm:
+> `0.04s user 0.03s system 23% cpu 0.295 total`
+
+245 times faster!!
