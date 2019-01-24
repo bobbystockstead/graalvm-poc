@@ -27,8 +27,10 @@ Example:
 
 ## Speed test results
 Dynamic groovy:
-> `9.84s user 0.67s system 379% cpu 2.767 total`
+> `9.80s user 0.66s system 346% cpu 3.022 total`
 Compiled static groovy:
-> ``
+> `2.68s user 0.34s system 294% cpu 1.024 total`
 GraalVm:
-> ``
+> `0.04s user 0.03s system 23% cpu 0.295 total`
+
+245 times faster!!
