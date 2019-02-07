@@ -3,6 +3,7 @@ FROM oracle/graalvm-ce:1.0.0-rc11
 ADD config/ /app/config/
 ADD src/ /app/src/
 ADD compile-native-image.sh /app/
+ADD countlinks.sh /app/
 
 ENV GROOVY_HOME=/root/.sdkman/candidates/groovy/2.5.6
 
