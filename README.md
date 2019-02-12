@@ -1,8 +1,15 @@
 # graalvm-poc
 Test app with Grapes -> Groovy -> GraalVM -> docker !
 
+
+## Shoutout!!
+Shoutout to Szymon Stepniak (@wololock in the groovy community and github) for posting a guide on graalVM.  This repo is just an implementation of his work. (with some minor refactoring)
+
+You can check out his guides here:
+> https://e.printstacktrace.blog/graalvm-groovy-grape-creating-native-image-of-standalone-script/
+> https://e.printstacktrace.blog/graalvm-native-image-inside-docker-container-does-it-make-sense/
 ### check your dgm config file
-If you are using a version of groovy other than 2.5.5, make sure that you update your dgm.json.  You can do this by running:
+If you are using a version of groovy other than 2.5.6, make sure that you update your dgm.json.  You can do this by running:
 
 `groovy src/dgm.groovy > src/dgm.json`
 
@@ -28,6 +35,18 @@ Format:
 Example:
 
 `./countlinks -Djava.library.path=$HOME/.sdkman/candidates/java/1.0.0-rc-11-grl/jre/lib https://stackoverflow.com`
+
+### building it into a docker image
+`docker build -t countlinks .`
+
+### running the docker container
+Format:
+
+`docker run --rm --read-only countlinks {some website}`
+
+Example:
+
+`docker run --rm --read-only countlinks https://stackoverflow.com`
 
 
 ## Speed test results
